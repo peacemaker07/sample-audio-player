@@ -14,6 +14,7 @@
 		3900574520550B0000C20515 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3900574320550B0000C20515 /* LaunchScreen.storyboard */; };
 		3900575020550B0000C20515 /* sample_audio_playerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900574F20550B0000C20515 /* sample_audio_playerTests.swift */; };
 		3900575B20550B0000C20515 /* sample_audio_playerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3900575A20550B0000C20515 /* sample_audio_playerUITests.swift */; };
+		394EF059205D559F00F51CBE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394EF058205D559F00F51CBE /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		3900575620550B0000C20515 /* sample-audio-playerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sample-audio-playerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3900575A20550B0000C20515 /* sample_audio_playerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample_audio_playerUITests.swift; sourceTree = "<group>"; };
 		3900575C20550B0100C20515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		394EF056205D4BAC00F51CBE /* sample-audio-player.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sample-audio-player.entitlements"; sourceTree = "<group>"; };
+		394EF058205D559F00F51CBE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				394EF059205D559F00F51CBE /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 				3900574E20550B0000C20515 /* sample-audio-playerTests */,
 				3900575920550B0000C20515 /* sample-audio-playerUITests */,
 				3900573820550B0000C20515 /* Products */,
+				394EF057205D559F00F51CBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +102,7 @@
 		3900573920550B0000C20515 /* sample-audio-player */ = {
 			isa = PBXGroup;
 			children = (
+				394EF056205D4BAC00F51CBE /* sample-audio-player.entitlements */,
 				3900573A20550B0000C20515 /* AppDelegate.swift */,
 				3900573C20550B0000C20515 /* ViewController.swift */,
 				3900573E20550B0000C20515 /* Main.storyboard */,
@@ -123,6 +129,14 @@
 				3900575C20550B0100C20515 /* Info.plist */,
 			);
 			path = "sample-audio-playerUITests";
+			sourceTree = "<group>";
+		};
+		394EF057205D559F00F51CBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				394EF058205D559F00F51CBE /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,17 @@
 					3900573620550B0000C20515 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 					3900574A20550B0000C20515 = {
 						CreatedOnToolsVersion = 9.2;
@@ -426,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "sample-audio-player/sample-audio-player.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98P9DD9769;
 				INFOPLIST_FILE = "sample-audio-player/Info.plist";
@@ -441,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "sample-audio-player/sample-audio-player.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98P9DD9769;
 				INFOPLIST_FILE = "sample-audio-player/Info.plist";
